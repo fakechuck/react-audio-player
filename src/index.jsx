@@ -92,6 +92,7 @@ class ReactAudioPlayer extends Component {
         ref={(ref) => { this.audioEl = ref; }}
         src={this.props.src}
         style={this.props.style}
+        title={this.props.title}
       >
         {incompatibilityMessage}
       </audio>
@@ -119,6 +120,7 @@ ReactAudioPlayer.defaultProps = {
   preload: 'metadata',
   src: null,
   style: {},
+  title: null
 };
 
 ReactAudioPlayer.propTypes = {
@@ -141,6 +143,7 @@ ReactAudioPlayer.propTypes = {
   preload: PropTypes.oneOf(['', 'none', 'metadata', 'auto']),
   src: PropTypes.string, // Not required b/c can use <source>
   style: PropTypes.objectOf(PropTypes.string),
+  title: PropTypes.string
 };
 
 export default ReactAudioPlayer;
